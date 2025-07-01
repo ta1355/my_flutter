@@ -10,13 +10,37 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.blue,
-          centerTitle: true,
-          title: Text("hello"),
-          titleTextStyle: TextStyle(color: Colors.white),
+        backgroundColor: Color.fromRGBO(37, 37, 37, 1),
+        body: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 40),
+          child: Column(
+            children: [
+              SizedBox(height: 80),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text(
+                        'siuuu',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 28,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      Text(
+                        "welcome",
+                        style: TextStyle(color: Colors.white.withOpacity(0.5)),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
-        body: Center(child: Text("siuuuuu")),
       ),
     );
   }
