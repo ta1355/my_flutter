@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_flutter/widgets/button.dart';
 
 void main() {
   var um = Player(name: "siuuuuu");
@@ -60,19 +61,18 @@ class App extends StatelessWidget {
               ),
               SizedBox(height: 20),
               Row(
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Colors.amber,
-                      borderRadius: BorderRadius.circular(45),
-                    ),
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(
-                        vertical: 20,
-                        horizontal: 50,
-                      ),
-                      child: Text('Transfer', style: TextStyle(fontSize: 22)),
-                    ),
+                  Button(
+                    text: "transfer",
+                    bgColor: Colors.amber,
+                    textColor: Colors.black,
+                  ),
+                  SizedBox(width: 20),
+                  Button(
+                    text: "request",
+                    bgColor: Color(0xFF1F2123),
+                    textColor: Colors.white,
                   ),
                 ],
               ),
