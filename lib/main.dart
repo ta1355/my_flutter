@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_flutter/widgets/button.dart';
+import 'package:my_flutter/widgets/currency_card.dart';
 
 void main() {
   var um = Player(name: "siuuuuu");
@@ -102,51 +103,19 @@ class App extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 20),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Color(0xFF1F2123),
-                    borderRadius: BorderRadius.circular(25),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(30),
-                    child: Row(
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Euro",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 32,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                            SizedBox(height: 10),
-                            Row(
-                              children: [
-                                Text(
-                                  '6 428',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20,
-                                  ),
-                                ),
-                                SizedBox(width: 10),
-                                Text(
-                                  'EUR',
-                                  style: TextStyle(
-                                    color: Colors.white.withOpacity(0.8),
-                                    fontSize: 20,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
+                CurrencyCard(
+                  name: 'Euro',
+                  code: "EUR",
+                  amount: "6 428",
+                  icon: Icons.euro_rounded,
+                  isInverted: false,
+                ),
+                CurrencyCard(
+                  name: 'Bitcoin',
+                  code: "BTC",
+                  amount: "9 785",
+                  icon: Icons.currency_bitcoin_rounded,
+                  isInverted: true,
                 ),
               ],
             ),
