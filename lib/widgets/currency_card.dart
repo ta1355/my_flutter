@@ -6,6 +6,8 @@ class CurrencyCard extends StatelessWidget {
   final IconData icon;
   final bool isInverted;
 
+  static final _blackColor = Color(0xFF1F2123);
+
   const CurrencyCard({
     super.key,
     required this.name,
@@ -20,7 +22,7 @@ class CurrencyCard extends StatelessWidget {
     return Container(
       clipBehavior: Clip.hardEdge,
       decoration: BoxDecoration(
-        color: isInverted ? Colors.white : Color(0xFF1F2123),
+        color: isInverted ? Colors.white : _blackColor,
         borderRadius: BorderRadius.circular(25),
       ),
       child: Padding(
@@ -34,7 +36,7 @@ class CurrencyCard extends StatelessWidget {
                 Text(
                   name,
                   style: TextStyle(
-                    color: Colors.white,
+                    color: isInverted ? _blackColor : Colors.white,
                     fontSize: 32,
                     fontWeight: FontWeight.w600,
                   ),
@@ -44,13 +46,19 @@ class CurrencyCard extends StatelessWidget {
                   children: [
                     Text(
                       amount,
-                      style: TextStyle(color: Colors.white, fontSize: 20),
+                      style: TextStyle(
+                        color: isInverted ? _blackColor : Colors.white,
+                        fontSize: 20,
+                      ),
                     ),
                     SizedBox(width: 10),
                     Text(
                       code,
                       style: TextStyle(
-                        color: Colors.white.withOpacity(0.8),
+                        color:
+                            isInverted
+                                ? _blackColor
+                                : Colors.white.withOpacity(0.8),
                         fontSize: 20,
                       ),
                     ),
@@ -62,7 +70,11 @@ class CurrencyCard extends StatelessWidget {
               scale: 2.2,
               child: Transform.translate(
                 offset: Offset(-5, 12),
-                child: Icon(icon, color: Colors.white, size: 88),
+                child: Icon(
+                  icon,
+                  color: isInverted ? _blackColor : Colors.white,
+                  size: 88,
+                ),
               ),
             ),
           ],
